@@ -1,35 +1,30 @@
 "use strict";
 
-window.onload = function displayDropdown() {
+window.onload = init;
+
+function init() {
 
     // Declared new variables for radio elements from HTML document
     const locationRadioBtn = document.getElementById("locationRadioBtn");
     const parkTypeRadioBtn = document.getElementById("parkTypeRadioBtn");
 
-    // Created radio button event handlers
-    locationRadioBtn.onclick = displayDropdown;
-    parkTypeRadioBtn.onclick = displayDropdown;
-
     // Declared new variables for dropdown elements from HTML document
     const locationDropdown = document.getElementById("locationDropdown");
     const parkTypeDropdown = document.getElementById("parkTypeDropdown");
 
-    // Created location radio button action to display location dropdown and hide park type dropdown once checked
-    // Created a for loop to go through the location array and display the states in my dropdown
-    if (locationRadioBtn.checked) {
+    // Set click event handlers to control dropdown options
+    locationRadioBtn.onclick = function () {
         locationDropdown.style.display = "block";
         parkTypeDropdown.style.display = "none"; // Hides parkTypeDropdown if locationRadioBtn is checked
 
-        for (let state of locationsArray) {
+        for (let states of locationsArray) {
             let option = document.createElement("option");
-            option.innerText = state;
+            option.innerText = states;
             locationDropdown.appendChild(option);
         }
-    }
+    };
 
-    // Created park type radio button action to display park type dropdown and hide location dropdown once checked
-    // Created a for loop to go through the park type array and display the park types in my dropdown
-    else if (parkTypeRadioBtn.checked) {
+    parkTypeRadioBtn.onclick = function () {
         parkTypeDropdown.style.display = "block";
         locationDropdown.style.display = "none"; // Hides locationDropdown if parkTypeRadioBtn is checked
 
@@ -39,6 +34,64 @@ window.onload = function displayDropdown() {
             parkTypeDropdown.appendChild(option);
 
         }
+    };
+};
+
+function populateParkInfo(locationDropdown, parkTypeDropdown) {
+
+    const nationalParkDetails = document.getElementById("nationalParkDetails");
+    const locationId = document.getElementById("locationId");
+    const locationName = document.getElementById("locationName");
+    const locationAddress = document.getElementById("locationAddress");
+    const locationCity = document.getElementById("locationCity");
+    const locationState = document.getElementById("locationState");
+    const locationZipCode = document.getElementById("locationZipCode");
+    const locationPhone = document.getElementById("locationPhone");
+    const locationFax = document.getElementById("locationFax");
+    const locationLatitude = document.getElementById("locationLatitude");
+    const locationLongitude = document.getElementById("locationLongitude");
+    const locationCoordinates = document.getElementById("locationCoordinates");
+
+    const selectedState = locationDropdown.value;
+    const selectedParkType = parkTypeDropdown.value;
+
+    locationDropdown.onchange = function () {
+    if (selectedState !== "") {
+        let selectedLocation = nationalParksArray.find(park => park.State == selectedState);
+        locationId.innerText = selectedLocation.LocationID;
+        locationName.innerText = selectedLocation.LocationName;
+        locationAddress.innerText = selectedLocation.Address;
+        locationCity.innerText = selectedLocation.City;
+        locationState.innerText = selectedLocation.State;
+        locationZipCode.innerText = selectedLocation.ZipCode;
+        locationPhone.innerText = selectedLocation.Phone;
+        locationFax.innerText = selectedLocation.Fax;
+        locationLatitude.innerText = selectedLocation.Latitude;
+        locationLongitude.innerText = selectedLocation.Longitude;
+        locationCoordinates.innerText = selectedLocation.Location;
+
+        nationalParkDetails.style.display = "block"
     }
+};
+    parkTypeDropdown.onchange = function () {
+
+    if (selectedParkType !== "") {
+        let selectedType = nationalParksArray.find(park => park.LocationID == selectedParkType);
+        locationId.innerText = selectedType.LocationID;
+        locationName.innerText = selectedType.LocationName;
+        locationAddress.innerText = selectedType.Address;
+        locationCity.innerText = selectedType.City;
+        locationState.innerText = selectedType.State;
+        locationZipCode.innerText = selectedType.ZipCode;
+        locationPhone.innerText = selectedType.Phone;
+        locationFax.innerText = selectedType.Fax;
+        locationLatitude.innerText = selectedType.Latitude;
+        locationLongitude.innerText = selectedType.Longitude;
+        locationCoordinates.innerText = selectedType.Location;
+
+        nationalParkDetails.style.display = "block"
+    }
+};
+
 };
 
