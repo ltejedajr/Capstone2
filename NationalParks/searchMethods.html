@@ -8,14 +8,14 @@
     <link href="" rel="stylesheet">
 </head>
 
-<style>
+<!-- <style>
     /* .center {
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 50%;
     } */
-</style>
+</style> -->
 
 <body>
     <header role="banner">
@@ -56,16 +56,19 @@
 
     <div class="container-fluid center">
 
-        <div class="box container-fluid center" style="text-align: center; background-color: rgb(42, 73, 147);">
-            <h1 style="color: white;">Search for National Park</h1>
-            <h2 style="margin-top: 10px; color: white" ;>Search by Location</h2>
-            <select id="locationDropdown">
-                <option value="" selected>Choose a location</option>
-            </select><br>
+        <div class="box container-fluid center" style="text-align: center; background-color: rgb(255, 255, 255);">
+            <h1 style="color: rgb(0, 0, 0);">Search for National Parks</h1>
 
-            <h2 style="margin-top: 10px; color: white" ;>Search by Park Type</h2>
-            <select id="parkTypeDropdown">
-                <option value="" selected>Choose a park type</option>
+            <input type="radio" name="searchMethod" id="locationRadioBtn" value="location"> Location
+            <input type="radio" name="searchMethod" id="parkTypeRadioBtn" value="parkType"
+                style="margin-left: 30px;">Type of Park<br><br>
+
+    
+            <select id="locationDropdown" name="dropdown" style="display: none;">
+                <option value="" selected>Select a state</option>
+            </select>
+            <select id="parkTypeDropdown" name="dropdown" style="display: none;">
+                <option value="" selected>Select a type of park</option>
             </select><br>
 
             <div id="nationalParkDetails" style="display: none; margin-top: 10px; color: white;">
@@ -74,33 +77,16 @@
                 <p><strong>Location Name:</strong> <label id="locationName"></label></p>
                 <p><strong>Address:</strong> <label id="locationAddress"></label></p>
                 <p><strong>City:</strong> <label id="locationCity"></label></p>
-                <p><strong>State:</strong> $<label id="locationState"></label></p>
+                <p><strong>State:</strong> <label id="locationState"></label></p>
                 <p><strong>Zip Code:</strong> <label id="locationZipCode"></label></p>
-                <p><strong>Phone:</strong> $<label id="locationPhone"></label></p>
+                <p><strong>Phone:</strong> <label id="locationPhone"></label></p>
                 <p><strong>Fax:</strong> <label id="locationFax"></label></p>
-                <p><strong>Latitude:</strong> $<label id="locationLatitude"></label></p>
+                <p><strong>Latitude:</strong> <label id="locationLatitude"></label></p>
                 <p><strong>Longitude:</strong> <label id="locationLongitude"></label></p>
-                <p><strong>Location:</strong> $<label id="locationCoordinates"></label></p>
+                <p><strong>Location:</strong> <label id="locationCoordinates"></label></p>
             </div>
 
-            <!-- <div id="purchaseForm" style="display: none; color: white;">
-                <h2>Purchase Tickets</h2>
-                <form id="ticketForm">
-                    <label for="ticketCount">Number of Tickets:</label>
-                    <input type="number" id="ticketCount" min="1" required><br><br>
-                    <label for="creditCard">Credit Card Number:</label>
-                    <input type="text" id="creditCard" required placeholder="XXXX-XXXX-XXXX-XXXX"><br><br>
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" required placeholder="user@email.com"><br><br>
-                    <button type="submit">Purchase</button>
-                    <button type="reset">Reset</button>
-                </form><br>
-            </div>
-        </div>
-    
-        <div id="purchaseMessage" style="display: none;"></div> -->
-
-            <hr>
+            <hr style="border: 1pt solid">
 
             <div class="container-fluid center">
 
@@ -113,12 +99,14 @@
                 </footer>
             </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-                crossorigin="anonymous"></script>
+
             <script src="scripts/nationalParkData.js"></script>
             <script src="scripts/locationData.js"></script>
             <script src="scripts/parkTypeData.js"></script>
+            <script src="scripts/searchMethods.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
 </body>
 
 </html>
