@@ -56,4 +56,25 @@ const locationsArray = [
     "West Virginia",
     "Wisconsin",
     "Wyoming"
-]
+];
+
+window.onload = function () {
+    const locationDropdown = document.getElementById("locationDropdown");
+
+    // Create the function for dropdown and the options it will populate from the array
+    function populateDropdown(dropdown, data) {
+        dropdown.innerHTML = '<option value="" selected>Select State/Territory</option>';
+
+        // Using forEach method to loop through the location array of states
+        data.forEach(item => {
+            let option = document.createElement("option");
+            option.value = item;
+            option.textContent = item;
+            dropdown.appendChild(option);
+        });
+    }
+
+    // Populate the location dropdown
+    populateDropdown(locationDropdown, locationsArray);
+
+};
