@@ -5,17 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oasis Outdoor Adventures</title>
-    <link href="" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-
-<!-- <style>
-    /* .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    } */
-</style> -->
 
 <body>
     <header role="banner">
@@ -59,32 +50,23 @@
         <div class="box container-fluid center" style="text-align: center; background-color: rgb(255, 255, 255);">
             <h1 style="color: rgb(0, 0, 0);">Search for National Parks</h1>
 
-            <input type="radio" name="searchMethod" id="locationRadioBtn" value="location"> Location
-            <input type="radio" name="searchMethod" id="parkTypeRadioBtn" value="parkType"
-                style="margin-left: 30px;">Type of Park<br><br>
+            <!-- Radio Buttons -->
 
-    
-            <select id="locationDropdown" name="dropdown" style="display: none;">
-                <option value="" selected>Select a state</option>
+            <input type="radio" name="searchMethod" id="locationRadioBtn" value="location"> Location
+            <input type="radio" name="searchMethod" id="parkTypeRadioBtn" value="parkType" style="margin-left: 30px;">&nbsp;Type of Park<br><br>
+
+            <!-- Dropdown -->
+
+            <select id="locationDropdown" style="display: none;">
+                <option id="defaultLocationOption" value="" selected>Select a state</option>
             </select>
-            <select id="parkTypeDropdown" name="dropdown" style="display: none;">
-                <option value="" selected>Select a type of park</option>
+            <select id="parkTypeDropdown" style="display: none;">
+                <option id="defaultTypeOption" value="" selected>Select a type of park</option>
             </select><br>
 
-            <div id="nationalParkDetails" style="display: none; margin-top: 10px; color: white;">
-                <h2>National Park Details</h2>
-                <p><strong>Location ID:</strong> <label id="locationId"></label></p>
-                <p><strong>Location Name:</strong> <label id="locationName"></label></p>
-                <p><strong>Address:</strong> <label id="locationAddress"></label></p>
-                <p><strong>City:</strong> <label id="locationCity"></label></p>
-                <p><strong>State:</strong> <label id="locationState"></label></p>
-                <p><strong>Zip Code:</strong> <label id="locationZipCode"></label></p>
-                <p><strong>Phone:</strong> <label id="locationPhone"></label></p>
-                <p><strong>Fax:</strong> <label id="locationFax"></label></p>
-                <p><strong>Latitude:</strong> <label id="locationLatitude"></label></p>
-                <p><strong>Longitude:</strong> <label id="locationLongitude"></label></p>
-                <p><strong>Location:</strong> <label id="locationCoordinates"></label></p>
-            </div>
+            <!-- Accordion Container -->
+
+                <div id="parkContainer" class="accordion accordion-flush"></div>
 
             <hr style="border: 1pt solid">
 
@@ -93,20 +75,20 @@
                 <footer>
                     <p style="text-align: center;">Contact us for bookings and more information:</p>
                     <address style="text-align: center;">
-                        Email: <a href="mailto:info@touristbureau.com">info@oasisoutdoor.com</a><br>
+                        Email: <a href="mailto:info@touristbureau.com">info@oasisoutdoors.com</a><br>
                         Phone: <a href="tel:+1234567890">123-456-7890</a>
                     </address>
                 </footer>
             </div>
 
-
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+            
             <script src="scripts/nationalParkData.js"></script>
             <script src="scripts/locationData.js"></script>
             <script src="scripts/parkTypeData.js"></script>
             <script src="scripts/searchMethods.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-                crossorigin="anonymous"></script>
 </body>
 
 </html>
