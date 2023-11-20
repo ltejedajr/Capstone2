@@ -62,13 +62,13 @@ function dropdownSelection() {
     clearContainer();
 
     if (locationRadioBtn.checked) {
-        const stateSelection = locationDropdown.value;
-        const parksList = filterParksByState(stateSelection);
+        let stateSelection = locationDropdown.value;
+        let parksList = filterParksByState(stateSelection);
         parkInfoByStateContainer(parksList);
     }
     else if (parkTypeRadioBtn.checked) {
-        const parkTypeSelection = parkTypeDropdown.value;
-        const typeList = filterParksByType(parkTypeSelection);
+        let parkTypeSelection = parkTypeDropdown.value;
+        let typeList = filterParksByType(parkTypeSelection);
         parkInfoByTypeContainer(typeList);
     }
 };
@@ -117,6 +117,16 @@ function parkInfoByStateContainer(parksList) {
         let accordionBody = document.createElement("div");
         accordionBody.className = "accordion-body";
 
+        let visitLink = '';
+
+        // if (park.Visit) {
+        //     visitLink = '<a href="' + park.Visit + '" target="_blank" class="btn btn-dark">Visit Park</a>';
+        // }
+
+        // if (park.Visit) {
+        //     visitLink = <a href="${park.Visit}" target="_blank" class="btn btn-dark">Visit Park </a>;
+        // }
+
         let accordionBodyHTML = `
             <p><strong>Location ID:</strong> ${park.LocationID}</p>
             <p><strong>Location Name:</strong> ${park.LocationName}</p>
@@ -128,7 +138,7 @@ function parkInfoByStateContainer(parksList) {
             <p><strong>Fax:</strong> ${park.Fax}</p>
             <p><strong>Latitude:</strong> ${park.Latitude}</p>
             <p><strong>Longitude:</strong> ${park.Longitude}</p>
-            <p><strong>Visit:</strong> ${park.hasOwnProperty('Visit')}</p>
+            <p><strong>Visit:</strong> <a href=""> ${park.Visit}</a></p>
         `;
 
         accordionBody.innerHTML = accordionBodyHTML;
@@ -186,7 +196,7 @@ function parkInfoByTypeContainer(typeList) {
             <p><strong>Fax:</strong> ${park.Fax}</p>
             <p><strong>Latitude:</strong> ${park.Latitude}</p>
             <p><strong>Longitude:</strong> ${park.Longitude}</p>
-            <p><strong>Visit:</strong> ${park.hasOwnProperty('Visit')}</p>
+            <p><strong>Visit:</strong> <a href=""> ${park.Visit}</a></p>
         `;
 
         accordionBody.innerHTML = accordionBodyHTML;

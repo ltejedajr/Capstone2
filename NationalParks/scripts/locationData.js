@@ -1,6 +1,6 @@
 "use strict";
 
-const locationsArray = [
+const locationsArray = [ 
     "Alabama",
     "Alaska",
     "American Samoa",
