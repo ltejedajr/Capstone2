@@ -1,10 +1,14 @@
 "use strict";
 
 // Global variables.
+
 const mountainContainer = document.getElementById("mountainContainer");
 const mountainDropdown = document.getElementById("mountainDropdown");
 
 window.onload = init;
+
+// This function contains the onchange event handler which in this case
+// will have run another function once the user selects an item from the dropdowm menu.
 
 function init() {
     mountainDropdown.onchange = dropdownSelection;
@@ -14,6 +18,7 @@ function init() {
 // This function will generate my mountain dropdown menu by using a for of loop 
 // which iterates through the mountainsArray and appending new mountain options 
 // everytime it passes through.
+
 function showMountainDropdown() {
     let defaultOption = document.getElementById("defaultMountainOption");
     defaultOption.innerText = "Select a mountain";
@@ -28,9 +33,11 @@ function showMountainDropdown() {
     mountainDropdown.value = "";
 };
 
-// This function will find the object in the array that matches the selected option.
-// Declared a variable which contains the value from the mountainDropdown.
-// Added a function which can clear any content which exists in the mountainContainer.
+// This is the function that was mentioned previously. It will find an object in the 
+// array that matches the selected option. Declared a variable which contains the value
+// from the mountainDropdown. Added a function which can clear any content which exists 
+// in the mountainContainer.
+
 function dropdownSelection() {
     clearContainer();
 
@@ -92,6 +99,10 @@ function mtInfoContainer(mountain) {
         mountainContainer.innerHTML = "";
     };
   
+
+    // This was a late attempt to change my accordion into cards instead.
+    // I required much more knowledge on looping and arrays inside elements.
+    // Maybe some other time.
 
     // function mtInfoContainer(mountain) {
 
