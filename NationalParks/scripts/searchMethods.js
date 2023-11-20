@@ -1,5 +1,7 @@
 "use strict";
 
+// Global variables.
+
 const parkContainer = document.getElementById("parkContainer");
 const locationRadioBtn = document.getElementById("locationRadioBtn");
 const parkTypeRadioBtn = document.getElementById("parkTypeRadioBtn");
@@ -8,12 +10,20 @@ const parkTypeDropdown = document.getElementById("parkTypeDropdown");
 
 window.onload = init;
 
+// This function contains two sets of event handlers. 
+// I went with onclick and onchange event handlers 
+// to be able to control my radio buttons and dropdown 
+// selection reactions.
+
 function init() {
     locationRadioBtn.onclick = handleRadioClicked;
     parkTypeRadioBtn.onclick = handleRadioClicked;
     locationDropdown.onchange = dropdownSelection;
     parkTypeDropdown.onchange = dropdownSelection;
 };
+
+// This function handles both radio buttons if clicked and their reactions.
+// I used if, else if statements to render the results.
 
 function handleRadioClicked() {
     clearContainer();
@@ -25,6 +35,11 @@ function handleRadioClicked() {
         showParkTypeDropdown();
     }
 };
+
+// This function will display the hidden dropdown according to the 
+// corresponding radio button that is selected. I used a for of loop
+// to iterate through the properties in the array and append them as an
+// option to the location dropdown.
 
 function showLocationDropdown() {
     locationDropdown.style.display = "block";
@@ -42,6 +57,10 @@ function showLocationDropdown() {
     locationDropdown.value = "";
 };
 
+// I utilized a second function which renders similar results to the one above.
+// Only this time, the for of loop was iterating through the parkTypesArray and
+// appending to the parkTypeDropdown.
+
 function showParkTypeDropdown() {
     parkTypeDropdown.style.display = "block";
     locationDropdown.style.display = "none";
@@ -58,6 +77,10 @@ function showParkTypeDropdown() {
     parkTypeDropdown.value = "";
 };
 
+// I created this function to create what occurs when a selection from either dropdown
+// is made. Once I declared variables corresponding to the value of the dropdowns, I pass 
+// them through as paramets for my functions.
+
 function dropdownSelection() {
     clearContainer();
 
@@ -73,6 +96,9 @@ function dropdownSelection() {
     }
 };
 
+// I created this function to serve as a set of formulas to filter through the properties 
+// of the objects in the array.
+
 function filterParksByState(state) {
     return nationalParksArray.filter(natPark => natPark.State == state);
 };
@@ -80,6 +106,9 @@ function filterParksByState(state) {
 function filterParksByType(type) {
     return nationalParksArray.filter(natPark => natPark.LocationName.includes(type));
 };
+
+// This function creates a container for the accordion item and adds all elements to given variable names.
+// I chose to display the info as literal strings for easier to read code.
 
 function parkInfoByStateContainer(parksList) {
     parksList.forEach(park => {
