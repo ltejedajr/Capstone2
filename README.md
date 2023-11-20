@@ -58,3 +58,11 @@ This project has been completed as part of the capstone assignment. Further impr
 I would like to thank my instructor Matt for teaching us this materials in a patient manner. I would also like to thank Daisy Gonzalez for her guidance and support 
 
 throughout the development of this project. Feel free to add any additional details or ask any questions.
+
+![HomePage](https://file%252B.vscode-resource.vscode-cdn.net/Users/lawrence/LearnToCode/Capstone/Capstone2/ReadMeImages/homepage.png?version%253D1700483056881)
+
+![NationalParkLocationSearch](https://file%252B.vscode-resource.vscode-cdn.net/Users/lawrence/LearnToCode/Capstone/Capstone2/ReadMeImages/natparklocsearch.png?version%253D1700483089167)
+
+![NationalParkTypeSearch](https://file%252B.vscode-resource.vscode-cdn.net/Users/lawrence/LearnToCode/Capstone/Capstone2/ReadMeImages/natparktypesearch.png?version%253D1700483139392)
+
+![MountainSearch](https://file%252B.vscode-resource.vscode-cdn.net/Users/lawrence/LearnToCode/Capstone/Capstone2/ReadMeImages/mtsearch.png?version%253D1700483171170)
