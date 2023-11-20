@@ -7,13 +7,16 @@
     <title>Oasis Outdoor Adventures</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="css/mountainsInfo.css" rel="stylesheet">
 </head>
 
 <body>
     <header role="banner">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="" alt="Logo" width="150px" height="150px"></a>
+                <a class="navbar-brand" href="index.html">
+                    <img src="/Homepage/images/oasisAdventureLogo.png" alt="Logo" width="175px" height="175px">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -21,9 +24,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Homepage/index.html">Home</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../NationalParks/searchMethods.html">Visit a National Park</a>
                         </li>
@@ -36,52 +36,40 @@
         </nav>
     </header>
 
-    <div class="container-fluid">
-        <h1>Oasis Outdoor Adventures</h1>
-        <p>Experience the great outdoors!</p>
 
-        <img src="" alt="">
-        <img src="" alt="">
-    </div>
+    <div class="container-fluid" id="backgroundImage"><img src="images/mountainClimberBg.jpg" width="1927"
+            height="796.50"></div>
 
-    <hr style="border: 1pt solid">
-
-
-    <div class="box container-fluid center" style="text-align: center; background-color: rgb(255, 255, 255);">
+    <section>
         <h1 style="color: rgb(0, 0, 0);">Search for Mountains</h1>
 
         <!-- Dropdown -->
+        <div class="mtnDropdown">
+            <select id="mountainDropdown" style="display: block;">
+                <option id="defaultMountainOption" value="" selected>Select a mountain</option>
+            </select><br>
 
-        <select id="mountainDropdown" style="display: block;">
-            <option id="defaultMountainOption" value="" selected>Select a mountain</option>
-        </select><br>
+            <!-- Accordion Container -->
 
-        <!-- Accordion Container -->
+            <div id="mountainContainer" class="accordion accordion-flush"></div>
 
-        <div id="mountainContainer" class="accordion accordion-flush"></div>
-
-        <hr style="border: 1pt solid">
-
-
-            <footer>
-                <p style="text-align: center;">Contact us for bookings and more information:</p>
-                <address style="text-align: center;">
-                    Email: <a href="mailto:info@touristbureau.com">info@oasisoutdoors.com</a><br>
-                    Phone: <a href="tel:+1234567890">123-456-7890</a>
-                </address>
-            </footer>
-
-        
-        </div>
+            <hr style="border: 1pt black"><br><br>
+    </section>
+    <div class="container-fluid center" id="footerBanner">
+        <footer id="footerStyle">
+            <address style="text-align: center;">
+                Contact us for more information:<br>
+                Email: <a href="mailto:info@oasisadventures.com">info@oasisadventures.com</a><br>
+                Phone: <a href="tel:+1234567890">123-456-7890</a>
+            </address>
+        </footer>
     </div>
 
-
-
-    <script src="scripts/mountainData.js"></script>
-    <script src="scripts/mountainInfo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script src="scripts/mountainData.js"></script>
+    <script src="scripts/mountainInfo.js"></script>
 </body>
 
 </html>

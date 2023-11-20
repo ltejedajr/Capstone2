@@ -1,5 +1,6 @@
 "use strict";
 
+// Global variables.
 const mountainContainer = document.getElementById("mountainContainer");
 const mountainDropdown = document.getElementById("mountainDropdown");
 
@@ -10,6 +11,9 @@ function init() {
     showMountainDropdown();
 };
 
+// This function will generate my mountain dropdown menu by using a for of loop 
+// which iterates through the mountainsArray and appending new mountain options 
+// everytime it passes through.
 function showMountainDropdown() {
     let defaultOption = document.getElementById("defaultMountainOption");
     defaultOption.innerText = "Select a mountain";
@@ -24,6 +28,9 @@ function showMountainDropdown() {
     mountainDropdown.value = "";
 };
 
+// This function will find the object in the array that matches the selected option.
+// Declared a variable which contains the value from the mountainDropdown.
+// Added a function which can clear any content which exists in the mountainContainer.
 function dropdownSelection() {
     clearContainer();
 
@@ -32,6 +39,9 @@ function dropdownSelection() {
     mtInfoContainer(selectedMountain);
 
 };
+
+// This function creates a container for the accordion item and adds all elements to given variable names.
+// I chose to display the info as literal strings for easier to read code.
 
 function mtInfoContainer(mountain) {
 
@@ -81,4 +91,54 @@ function mtInfoContainer(mountain) {
     function clearContainer() {
         mountainContainer.innerHTML = "";
     };
+  
+
+    // function mtInfoContainer(mountain) {
+
+    //     let cardItemDiv = document.createElement("div");
+    //     cardItemDiv.className = "card";
+    //     cardItemDiv.style.width = "18rem";
+    
+    //     let cardImage = document.createElement("img");
+    //     cardImage.src = "images/" + mountain.img; 
+    //     cardImage.className = "card-img-top";
+    //     cardImage.alt = mountain.name;
+    
+    //     let cardBody = document.createElement("div");
+    //     cardBody.className = "card-body";
+    
+    //     let cardTitle = document.createElement("h5");
+    //     cardTitle.className = "card-title";
+    //     cardTitle.innerText = mountain.name;
+    
+    //     let cardText = document.createElement("p");
+    //     cardText.className = "card-text";
+    //     cardText.innerText = mountain.desc;
+    
+    //     cardBody.appendChild(cardTitle);
+    //     cardBody.appendChild(cardText);
+    
+    //     let listGroup = document.createElement("ul");
+    //     listGroup.className = "list-group list-group-flush";
+    
+    //     for (let item of mountainsArray.name) {
+    //         let listItem = document.createElement("li");
+    //         listItem.className = "list-group-item";
+    //         listItem.innerText = item;
+    //         listGroup.appendChild(listItem);
+    //     }
+    
+    //     let secondCardBody = document.createElement("div");
+    //     secondCardBody.className = "card-body";
+    
+    
+    //     cardItemDiv.appendChild(cardImage);
+    //     cardItemDiv.appendChild(cardBody);
+    //     cardItemDiv.appendChild(listGroup);
+    //     cardItemDiv.appendChild(secondCardBody);
+    
+    //     mountainContainer.appendChild(cardItemDiv);
+    // }
+        
+
   
