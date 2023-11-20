@@ -117,16 +117,6 @@ function parkInfoByStateContainer(parksList) {
         let accordionBody = document.createElement("div");
         accordionBody.className = "accordion-body";
 
-        let visitLink = '';
-
-        // if (park.Visit) {
-        //     visitLink = '<a href="' + park.Visit + '" target="_blank" class="btn btn-dark">Visit Park</a>';
-        // }
-
-        // if (park.Visit) {
-        //     visitLink = <a href="${park.Visit}" target="_blank" class="btn btn-dark">Visit Park </a>;
-        // }
-
         let accordionBodyHTML = `
             <p><strong>Location ID:</strong> ${park.LocationID}</p>
             <p><strong>Location Name:</strong> ${park.LocationName}</p>

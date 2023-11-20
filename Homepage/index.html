@@ -5,24 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oasis Outdoor Adventures</title>
-    <link href="" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="css/index.css" rel="stylesheet">
 </head>
-
-<style>
-    /* .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    } */
-</style>
 
 <body>
     <header role="banner">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="" alt="Logo"
-                        width="150px" height="150px"></a>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/oasisAdventureLogo.png" alt="Logo" width="175px" height="175px">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -31,13 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="">Home</a>
+                            <a class="nav-link" href="../NationalParks/searchMethods.html">Visit a National Park</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Visit a National Park</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Scale a Mountain</a>
+                            <a class="nav-link" href="../MountainsInfo/mountainsInfo.html">Scale a Mountain</a>
                         </li>
                     </ul>
                 </div>
@@ -45,23 +36,44 @@
         </nav>
     </header>
 
-    <div class="container-fluid">
-        <h1>Oasis Outdoor Adventures</h1>
-        <p>Experience the great outdoors!</p>
 
-            <img src="" alt="">
-            <img src="" alt="">
-    </div>
+<div class="container-fluid" id="backgroundImage"><img src="images/indexBg.jpg" width="1927" height="796.50"> </div>
 
-    <hr style="border: 1pt solid">
 
-    <div class="container-fluid center">
-        <footer>
-            <p style="text-align: center;">Contact us for bookings and more information:</p>
+    <section class="heo">
+        <h2>About Us</h2>
+        <p>At Oasis Adventures, we pride ourselves on being your premier guide to exploring the breathtaking wonders of
+            national parks, majestic mountains, and rich historical sites. Our mission is to provide you with an
+            unforgettable and environmentally friendly experience that not only allows you to connect with nature but
+            also contributes to the preservation of our planet.</p>
+        <p>We offer a variety of methods for you to embark on these incredible journeys, including guided hikes,
+            eco-friendly tours, and sustainable camping expeditions. By choosing Oasis Adventures, you are not only
+            choosing a fantastic exploration of nature's beauty but also making a conscious decision to minimize your
+            ecological footprint.</p>
+        <h2>Environmental Commitment</h2>
+        <p>Our commitment to the environment goes beyond just providing eco-friendly travel options. At Oasis
+            Adventures, we implement a range of practices to protect the delicate ecosystems of the places we visit.
+            From promoting Leave No Trace principles to utilizing low-impact transportation methods, such as electric
+            vehicles and bicycles, we strive to minimize our impact on the environment.</p>
+        <p>We collaborate with local communities and organizations to support conservation initiatives, ensuring that
+            the natural beauty and cultural heritage of these sites are preserved for future generations. Join Oasis
+            Adventures on a journey where responsible tourism meets unparalleled adventure, and together, let's create
+            lasting memories while safeguarding the planet we call home.</p>
+    </section>
+
+    
+
+    <hr style="border: 1pt black"><br><br>
+
+
+    <div class="container-fluid center" id="footerBanner">
+        <footer id="footerStyle">
             <address style="text-align: center;">
-                Email: <a href="mailto:info@touristbureau.com">info@touristbureau.com</a><br>
+                Contact us for more information:<br>
+                Email: <a href="mailto:info@oasisadventures.com">info@oasisadventures.com</a><br>
                 Phone: <a href="tel:+1234567890">123-456-7890</a>
             </address>
+            <img src="images/thankYou.png">
         </footer>
     </div>
 
@@ -70,4 +82,5 @@
         crossorigin="anonymous"></script>
     <script src=""></script>
 </body>
+
 </html>
